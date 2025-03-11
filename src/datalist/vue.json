@@ -1,0 +1,12 @@
+[
+  {
+    "id": "生命周期钩子函数",
+    "title": "Vue的生命周期钩子函数有哪些？",
+    "answer": "## 难度\n中等\n\n## 分类\n基础概念\n\n## 答案\nVue3的主要生命周期钩子包括：setup、onBeforeMount、onMounted、onBeforeUpdate、onUpdated、onBeforeUnmount、onUnmounted等。"
+  },
+  {
+    "id": "组合式API优势",
+    "title": "Vue3的组合式API（Composition API）相比选项式API有什么优势？",
+    "answer": "## 难度\n中等\n\n## 分类\n进阶概念\n\n## 答案\n组合式API提供了更好的代码组织、逻辑复用能力，解决了选项式API中的代码分散、混乱等问题，并且对TypeScript支持更好。"
+  }
+]

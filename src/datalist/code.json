@@ -1,0 +1,12 @@
+[
+  {
+    "id": "数组扁平化实现",
+    "title": "实现数组扁平化",
+    "answer": "## 难度\n中等\n\n## 分类\n手写代码\n\n## 答案\nfunction flatten(arr) {\n  return arr.reduce((prev, curr) => {\n    return prev.concat(Array.isArray(curr) ? flatten(curr) : curr);\n  }, []);\n}"
+  },
+  {
+    "id": "防抖函数实现",
+    "title": "实现一个防抖函数",
+    "answer": "## 难度\n中等\n\n## 分类\n手写代码\n\n## 答案\nfunction debounce(fn, delay) {\n  let timer = null;\n  return function (...args) {\n    if (timer) clearTimeout(timer);\n    timer = setTimeout(() => {\n      fn.apply(this, args);\n    }, delay);\n  };\n}"
+  }
+]
