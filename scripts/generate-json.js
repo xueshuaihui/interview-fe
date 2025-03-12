@@ -26,7 +26,7 @@ function processMarkdownFiles(category) {
       
       // 简单的标题提取（假设第一行是标题）
       const lines = content.split('\n');
-      const title = lines[0].replace(/^#\s+/, '');
+      const title = lines[0].replace(/^#\s+/, '').replace(/<[^>]+>/g, '');
       const answer = lines.slice(1).join('\n').trim();
 
       questions.push({

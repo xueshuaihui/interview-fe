@@ -13,8 +13,8 @@
                 :xs="24"
                 :sm="12"
                 :md="8"
-                :lg="6"
-                :xl="6">
+                :lg="8"
+                :xl="8">
           <template v-for="question in category.questions" :key="question.id">
             <el-card class="question-card" shadow="hover">
               <div class="question-title">{{ question.title }}</div>
@@ -172,6 +172,7 @@ onMounted(() => {
 .answer-content {
   color: #4a5568;
   line-height: 1.6;
+  text-align: left;
 
   :deep(pre) {
     background-color: #f8f9fa;
