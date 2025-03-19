@@ -1,1 +1,12 @@
-[]
+[
+  {
+    "id": "字符串千分位格式化",
+    "title": "字符串千分位格式化",
+    "answer": "```js\nfunction solution(s) {\n    // PLEASE DO NOT MODIFY THE FUNCTION SIGNATURE\n    // write code here\n    const [int, decimal] = s.split('.');\n    let result = s\n    if (int.length > 3) {\n        // 清除字符串千面的空格\n\n        result = int.replace(/^0+/g, '');\n        // result转为数组，颠倒顺序\n        result = result.split('').reverse();\n        // 遍历数组，每三位添加一个逗号\n        for (let i = 3; i < result.length; i += 4) {\n            result.splice(i, 0, ',');\n        }\n        // 再次颠倒顺序，转为字符串\n        result = result.reverse().join('') + (decimal ? '.' + decimal : '');\n    }\n    return result\n}\n\nfunction main() {\n    console.log(solution(\"1294512.12412\") === '1,294,512.12412');\n    console.log(solution(\"0000123456789.99\") === '123,456,789.99');\n    console.log(solution(\"987654321\") === '987,654,321');\n}\n\nmain();\n```"
+  },
+  {
+    "id": "数组中找出单独的数",
+    "title": "数组中找出单独的数",
+    "answer": "```js\n\nfunction solution(cards) {\n    // Edit your code here\n    return cards.reduce((acc, num)=> acc ^ num, 0)\n    \n}\n\nfunction main() {\n    // Add your test cases here\n    console.log(solution([1, 1, 2, 2, 3, 3, 4, 5, 5]) === 4);\n    console.log(solution([0, 1, 0, 1, 2]) === 2);\n}\n\nmain();\n\n```"
+  }
+]
