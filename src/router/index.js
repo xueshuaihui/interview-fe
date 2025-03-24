@@ -2,9 +2,14 @@ import { createRouter, createWebHistory } from 'vue-router'
 
 const routes = [
   {
-    path: '/',
-    name: 'Home',
-    component: () => import('../views/Home.vue')
+    path: '/RandomQuestions',
+    name: 'RandomQuestions',
+    component: () => import('../views/RandomQuestions.vue')
+  },
+  {
+    path: '/mock-interview',
+    name: 'MockInterview',
+    component: () => import('../views/MockInterview.vue')
   }
 ]
 

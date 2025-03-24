@@ -6,7 +6,11 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const srcDir = path.join(__dirname, '../src/datalist');
-const categories = ['js', 'vue', 'react', 'code'];
+const subDirs = fs.readdirSync(srcDir, { withFileTypes: true })
+  .filter(dirent => dirent.isDirectory())
+    .map(dirent => dirent.name);
+
+const categories = subDirs;
 
 function processMarkdownFiles(category) {
   const categoryDir = path.join(srcDir, category);
@@ -26,7 +30,7 @@ function processMarkdownFiles(category) {
       
       // 简单的标题提取（假设第一行是标题）
       const lines = content.split('\n');
-      const title = lines[0].replace(/^#\s+/, '').replace(/<[^>]+>/g, '');
+      const title = lines[0].replace(/^#+\s+/g, '').replace(/^\d+\.\s*/, '').replace(/<[^>]+>/g, '');
       const answer = lines.slice(1).join('\n').trim();
 
       questions.push({
@@ -41,6 +45,7 @@ function processMarkdownFiles(category) {
 }
 
 function generateJsonFiles() {
+  console.log(categories)
   categories.forEach((category) => {
     const questions = processMarkdownFiles(category);
     const outputPath = path.join(srcDir, `${category}.json`);

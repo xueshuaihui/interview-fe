@@ -3,7 +3,7 @@
     <el-header class="header">
       <h1>前端面试题库</h1>
       <el-button type="primary" :icon="Refresh" @click="refreshQuestions" class="refresh-btn">
-        刷新题目
+        随机题目
       </el-button>
     </el-header>
     <el-main>
@@ -11,10 +11,10 @@
         <el-col v-for="category in questionCategories" 
                 :key="category.title"
                 :xs="24"
-                :sm="12"
-                :md="8"
-                :lg="8"
-                :xl="8">
+                :sm="24"
+                :md="12"
+                :lg="12"
+                :xl="12">
           <template v-for="question in category.questions" :key="question.id">
             <el-card class="question-card" shadow="hover">
               <div class="question-title">{{ question.title }}</div>
